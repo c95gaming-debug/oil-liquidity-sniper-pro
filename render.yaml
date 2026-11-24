@@ -2,7 +2,7 @@ services:
   - type: web
     name: oil-liquidity-sniper-pro
     runtime: node
-    plan: starter
+    plan: free
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /api/health
@@ -12,10 +12,10 @@ services:
       - key: OPENAI_API_KEY
         sync: false
       - key: OPENAI_MODEL
-        value: gpt-6.2-astra
+        value: gpt-6-luna
       - key: KLINE_SYMBOL_LIMIT
         value: 30
       - key: NEWS_REFRESH_MS
         value: 300000
-      - key: AI_REFRESH_MS
-        value: 300000
+      - key: AI_REQUESTS_PER_DAY
+        value: 12
